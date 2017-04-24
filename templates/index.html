@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="hero-section">
+    <div class="container">
+      
+      <div class="section-content">
+        <h3>Bhausaheb Firodiya Junior College Online Admission Form </h3>
+        <a href="#" class="btn-primary">Sign Up</a>
+        <a href="{{ url_for('about') }}" class="btn-secondary">Sign In</a> 
+        <h4>New Users Please Sign-Up</h4>
+        <h4>Existing Users Please Sign-In</h4>
+      </div>
+
+      <div class="section-device">       
+        <img src="static/img/school.png">
+      </div>
+      
+      <div class="clearfix"></div>
+
+    </div>
+  </main>
+{% endblock %}
