@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  
+
+  <main class="container signup-section">
+    <div class="section-content">  
+	    <h2>Super Admin Page</h2>
+	    <p>From this page you can view all the created admins and you can create-edit-delete an admin</p>
+	     {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              
+            <ul>
+            {% for message in messages %}
+              <strong> {{ message }} </strong>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}    
+      <h2>Create a new Admin</h2>
+      <a href="{{ url_for('createadmin') }}" class="btn-primary">Create</a>
+      <a href="{{ url_for('logout') }}" class="btn-primary">Logout</a>
+      <table style="width:100%">
+		  <tr>
+		    <th>First Name</th>
+		    <th>Last Name</th>
+		    <th>Email</th>
+		    <th>Mobile Number</th>
+		    <th>Role</th>
+		  </tr>
+	    {% for user in users %}
+	     	<tr>
+				<td>{{user.firstname}}</td>
+				<td>{{user.lastname}} </td>			
+				<td>{{user.email}}</td>
+				<td>{{user.phone}}</td>
+				<td>{{user.role}}</td>		
+			</tr>				
+		{% endfor %}   
+		</table>	
+
+    </div>
+    <div class="section-table">  
+	    
+    </div>
+  </main>
+{% endblock %}

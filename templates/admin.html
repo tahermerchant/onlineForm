@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="about-section">
+    <div class="container">
+
+    <h2>Admin Page</h2>
+	 <p>From this page you can view all normal users</p>
+	 <a href="{{ url_for('logout') }}" class="btn-primary">Logout</a>
+
+	 <table style="width:100%">
+		  <tr>
+		    <th>First Name</th>
+		    <th>Last Name</th>
+		    <th>Email</th>
+		    <th>Mobile Number</th>
+		    <th>Role</th>
+		  </tr>
+	    {% for user in users %}
+	     	<tr>
+				<td>{{user.firstname}}</td>
+				<td>{{user.lastname}} </td>			
+				<td>{{user.email}}</td>
+				<td>{{user.phone}}</td>
+				<td>{{user.role}}</td>		
+			</tr>				
+		{% endfor %}   
+	</table>	
+
+    
+    </div>
+  </main>
+{% endblock %}

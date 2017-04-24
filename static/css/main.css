@@ -56,6 +56,11 @@ a {
 .section-device img {
   width: 600px;
 }
+.section-table {
+  float: right;
+  position: relative;
+  top: 65px;
+}
 
 .btn-primary {
   background: #4285f4;
